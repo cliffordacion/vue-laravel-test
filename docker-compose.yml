@@ -25,7 +25,6 @@ services:
             - mysql
             - redis
             - meilisearch
-            - selenium
     mysql:
         image: 'mysql:8.0'
         ports:
@@ -44,6 +43,17 @@ services:
           test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
           retries: 3
           timeout: 5s
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links:
+            - mysql:db
+        ports:
+            - "8083:80"
+        environment:
+            PMA_USER: '${DB_USERNAME}'
+            PMA_PASSWORD: '${DB_PASSWORD}'
+        networks:
+            - sail
     redis:
         image: 'redis:alpine'
         ports:
@@ -75,12 +85,6 @@ services:
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
         networks:
             - sail
-    selenium:
-       image: 'selenium/standalone-chrome'
-       volumes:
-            - '/dev/shm:/dev/shm'
-       networks:
-           - sail
 networks:
     sail:
         driver: bridge
