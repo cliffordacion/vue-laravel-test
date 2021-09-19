@@ -17,14 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Place on an API route
+Route::post('/upload', [App\Http\Controllers\PartController::class, 'upload'])->name('part.upload');
+Route::get('/combination', [App\Http\Controllers\PartController::class, 'combination'])->name('part.combination');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
+
