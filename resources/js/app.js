@@ -5,8 +5,11 @@
  */
 
 require('./bootstrap');
-
+// Import Bootstrap an BootstrapVue CSS files (order is important)
 window.Vue = require('vue').default;
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,6 +23,13 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('player-upload-component', require('./components/PartUploadComponent.vue').default);
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
