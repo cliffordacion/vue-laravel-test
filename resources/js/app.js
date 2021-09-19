@@ -23,12 +23,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('player-upload-component', require('./components/PartUploadComponent.vue').default);
+Vue.component('part-upload-component', require('./components/PartUploadComponent.vue').default);
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
-
+ 
 
 
 /**

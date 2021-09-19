@@ -10,7 +10,7 @@
                 <b-button v-b-modal.modal-part-upload>Upload Part</b-button>
               
                 <b-modal id="modal-part-upload" title="Upload Part" ok-only ok-variant="secondary" ok-title="Cancel">
-                    <player-upload-component></player-upload-component>
+                    <part-upload-component></part-upload-component>
                 </b-modal>
             </div>
         </div>
