@@ -24,6 +24,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('part-upload-component', require('./components/PartUploadComponent.vue').default);
+Vue.component('part-combination-component', require('./components/PartCombinationComponent.vue').default);
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin

@@ -14,3 +14,35 @@ button.close {
     color: white;
     border: none;
 }
+
+.button-containers {
+    flex-wrap: wrap;
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 100%;
+}
+
+.faces-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 20px;
+    .face-image {
+        width: 30%;
+        max-height: 250px;
+        position: relative;
+        height: 25vw;
+        .part-image {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+        }
+        .desc {
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
