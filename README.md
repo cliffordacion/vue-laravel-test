@@ -1,7 +1,5 @@
 
-# Developer Test for Cloud Employee
-- Application availaible in [lareact.thatsed.com](https://lareact.thatsed.com)
-
+# Test Project using vuejs on laravel
 # Application Function
 - User registration
 - User Login
